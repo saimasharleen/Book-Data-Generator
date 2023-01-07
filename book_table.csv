@@ -1,0 +1,18 @@
+book_id,title,author,language_code,year_published,num_pages,publisher,genre
+9780743273565,The Great Gatsby,F. Scott Fitzgerald,eng,1925,180,Scribner's Sons,Tragedy
+9780061120084,To Kill a Mockingbird,Harper Lee,eng,1960,324,J. B. Lippincott & Co.,Fiction
+9780590353427,Harry Potter and the Philosopher's Stone,J.K. Rowling,eng,1997,223,Bloomsbury,Fantasy
+9780439064866,Harry Potter and the Chamber of Secrets,J.K. Rowling,eng,1998,251,Bloomsbury,Fantasy
+9780439136365,Harry Potter and the Prisoner of Azkaban,J.K. Rowling,eng,1999,317,Bloomsbury,Fantasy
+9780439139601,Harry Potter and the Goblet of Fire,J.K. Rowling,eng,2000,636,Bloomsbury,Fantasy
+9780439358071,Harry Potter and the Order of the Phoenix,J.K. Rowling,eng,2003,766,Bloomsbury,Fantasy
+9780316228532,The Casual Vacancy,J.K. Rowling,eng,2012,503,Little, Brown and Company,Fiction
+9780316206830,The Cuckoo's Calling,J.K. Rowling,eng,2013,455,Mulholland Books,Crime
+9780316206847,The Silkworm,J.K. Rowling,eng,2014,455,Mulholland Books,Crime
+9780316206854,Career of Evil,J.K. Rowling,eng,2015,453,Mulholland Books,Crime
+9780316206861,Lethal White,J.K. Rowling,eng,2018,624,Mulholland Books,Crime
+9781501110362,It Ends with Us,Colleen Hoover,eng,2016,384,Atria Books,Romance
+9781476712079,Hopeless,Colleen Hoover,eng,2012,368,Atria Books,New Adult
+9781476712048,Maybe Now,Colleen Hoover,eng,2013,343,Atria Books,New Adult
+9781476712062,Losing Hope,Colleen Hoover,eng,2014,358,Atria Books,New Adult
+9781476712079,Ugly Love,Colleen Hoover,eng,2014,368,Atria Books,New Adult
