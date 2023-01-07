@@ -1,6 +1,7 @@
 import os
 import user
 import query
+import utility_matrix
 def generate_book_table(books):
     # Create a list of field names
     fields = ["book_id", "title", "author","language_code", "year_published", "num_pages", "publisher", "genre"]
@@ -183,3 +184,5 @@ exec(open('user.py').read())
 os.system('python user.py')
 exec(open('query.py').read())
 os.system('python query.py')
+exec(open('utility_matrix.py').read())
+os.system('python utility_matrix.py')
