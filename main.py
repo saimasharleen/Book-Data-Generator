@@ -1,4 +1,5 @@
 import os
+
 import user
 import query
 import utility_matrix
@@ -186,3 +187,5 @@ exec(open('query.py').read())
 os.system('python query.py')
 exec(open('utility_matrix.py').read())
 os.system('python utility_matrix.py')
+exec(open('queryfinal.py').read())
+os.system('python queryfinal.py')
