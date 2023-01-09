@@ -1,50 +1,36 @@
-def generate_query_set(data):
-    query_set = []
-    for query_id, attributes in data.items():
-        query_string = f"{query_id},"
-        for attribute, value in attributes.items():
-            query_string += f"{attribute}={value},"
-        query_set.append(query_string[:-1])
-    return "\n".join(query_set)
+import csv
+import random
 
-data = {
-    "Q1821": {
-        "title": "The Great Gatsby",
-        "author": "F. Scott Fitzgerald"
-    },
-    "Q1822": {
-        "title": "To Kill a Mockingbird",
-        "author": "Harper Lee"
-    },
-    "Q1823": {
-        "title": "To Kill a Mockingbird",
-        "author": "Harper Lee"
-    },
-    "Q1824": {
-        "title": "Maybe Now",
-        "author": "Colleen Hoover"
-    },
-    "Q1825": {
-        "title": "Losing Hope",
-        "author": "Colleen Hoover"
-    },
-    "Q1826": {
-        "title": "Ugly Love",
-        "author": "Colleen Hoover"
-    },
-    "Q1827": {
-        "title": "Harry Potter and the Order of the Phoenix",
-        "author": "J.K. Rowling"
-    },
-    "Q1828": {
-        "title": "Harry Potter and the Goblet of Fire",
-        "author": "J.K. Rowling"
-    }
+# Generate a list of 100 unique query IDs
+query_ids = ['Q' + str(i) for i in range(5001)]
 
-}
-# This code will generate a query set
-query_set = generate_query_set(data)
-print(query_set)
-# write the query_set string to a file called "query_set.csv" in the current working directory.
-with open("query_set.csv", "w") as f:
-    f.write(query_set)
+# Generate a list of possible attribute names and values
+attributes = ['author', 'language', 'genre', 'year', 'title']
+values = ['mcgill', 'eng', 'Tragedy', '2020', 'The Tempest']
+
+# Create an empty list to store the queries
+queries = []
+
+# Generate 100 queries
+for query_id in query_ids:
+  # Create an empty list to store the conditions for this query
+  conditions = []
+  # Choose a random number of attributes for this query
+  num_attributes = random.randint(1, len(attributes))
+  # Choose a random subset of the attributes
+  chosen_attributes = random.sample(attributes, num_attributes)
+  # Generate a condition for each chosen attribute
+  for attribute in chosen_attributes:
+    # Choose a random value for this attribute
+    value = random.choice(values)
+    # Add the condition to the list of conditions
+    conditions.append(attribute + '=' + value + '')
+  # Join the conditions into a single string separated by commas
+  conditions_str = ','.join(conditions)
+  # Add the query to the list of queries
+  queries.append([query_id, conditions_str])
+
+# Write the queries to a CSV file
+with open('queries.csv', 'w') as file:
+  writer = csv.writer(file)
+  writer.writerows(queries)

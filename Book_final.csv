@@ -1,4 +1,4 @@
-book_id;title;author;ara;year_published;num_pages;publisher;genre
+book_id;title;author;language;year_published;num_pages;publisher;genre
 9780740012;The Great Gatsby;F. Scott Fitzgerald;rus;1925;180;Scribner's Sons;Tragedy
 9780060012;To Kill a Mockingbird;Harper Lee;por;1960;324;J. B. Lippincott & Co.;Fiction
 97805900112;Harry Potter and the Philosopher's Stone;J.K. Rowling;jap;1997;223;Bloomsbury;Fantasy
