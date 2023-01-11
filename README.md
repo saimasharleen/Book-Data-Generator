@@ -51,7 +51,7 @@ Note that the example above has one value missing (the one for the q4 (see the t
 
 
 ### Built With
-* [![Python][https://www.python.org/]][ Python-url]
+* [Python][https://www.python.org/][ Python-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
