@@ -40,14 +40,10 @@ This project is a part of making a system that suggests queries. Here, we focus
 
 Here's why we created four types of dataset here:
 * A relational table populated with tuples. The table is expressed as a CSV file, where each row is a tuple, and the first row contains the names of the fields (attributes). You can assume that there are no NULL values. All the fields of all the tuples have a value. 
-* A user set. The set of users is nothing more than a set of ids. This is provided as a file, one user id per line. The file may be empty. 
+* A user set. A user set was then built. The collection of users consists of merely an array of ids. This data is provided in a file format, with one user ID per line.
 * A query set, which is a set of queries that have been posed in the past. Each query has a unique query id and its definition (i.e., the set of conditions). The query set is expressed as a CSV file where each line contains the conditions attribute=value separated by comma. The first element of each row is a query id. For example, a row in the query set is: 
 Q1821, author=John, genre=fantasy
-* A utility matrix User-Query that has for certain combinations of user and query, a value from 1 to 100  indicating how happy that user is with the answer set of that query. This is provided also as a CSV file, where the first row contains a list of query ids separated by comma. Any other row starts with a userId, followed by a set of comma separated fields (as many as the number of query names of the first row). These fields could be empty or have a value between 0 and 100. For example, the first row can be: 
-q1, q4, q625, q81671
-	and an example of one of the following rows 
-user36182, 3,,88,3
-Note that the example above has one value missing (the one for the q4 (see the two consecutive commas)
+* A utility matrix User-Query that has for certain combinations of user and query, the User-Query utility matrix contains, for each combination of user and query, a value between 1 and 100 that represents the user's level of satisfaction with the result set for that query. This is also offered as a CSV file, with the first row including a list of query ids separated by commas. Each alternate row begins with a userId, then a sequence of fields separated by commas (as many as the number of query names of the first row). These fields may be left empty or populated with numbers between 1 and 100. We created this file with 20% missing value.
 
 
 ### Built With
