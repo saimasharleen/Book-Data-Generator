@@ -1,36 +1,41 @@
 import csv
-import random
+import uuid
 
-# Generate a list of 100 unique query IDs
-query_ids = ['Q' + str(i) for i in range(5001)]
+# Column names of the book dataset
+column_names = ['bookID', 'title', 'authors', 'average_rating', 'isbn', 'isbn13', 'language_code', 'num_pages', 'ratings_count', 'text_reviews_count', 'publication_date', 'publisher']
 
-# Generate a list of possible attribute names and values
-attributes = ['author', 'language', 'genre', 'year', 'title']
-values = ['mcgill', 'eng', 'Tragedy', '2020', 'The Tempest']
+# Number of queries to be generated
+num_queries = 5000
 
-# Create an empty list to store the queries
+# List to store queries
 queries = []
 
-# Generate 100 queries
-for query_id in query_ids:
-  # Create an empty list to store the conditions for this query
-  conditions = []
-  # Choose a random number of attributes for this query
-  num_attributes = random.randint(1, len(attributes))
-  # Choose a random subset of the attributes
-  chosen_attributes = random.sample(attributes, num_attributes)
-  # Generate a condition for each chosen attribute
-  for attribute in chosen_attributes:
-    # Choose a random value for this attribute
-    value = random.choice(values)
-    # Add the condition to the list of conditions
-    conditions.append(attribute + '=' + value + '')
-  # Join the conditions into a single string separated by commas
-  conditions_str = ','.join(conditions)
-  # Add the query to the list of queries
-  queries.append([query_id, conditions_str])
+# Open the book dataset CSV file
+with open('book_dataset.csv', 'r') as book_file:
+    # Create a CSV reader
+    reader = csv.DictReader(book_file, fieldnames=column_names)
+    # Iterate through rows of the book dataset
+    for i, row in enumerate(reader):
+        # Generate a query ID
+        query_id = 'Q' + str(i)
+        # Create a list to store the conditions
+        conditions = []
+        # Iterate through the columns of the book dataset
+        for column_name in column_names:
+            # Skip the first column (bookID)
+            if column_name == 'bookID':
+                continue
+            # Add the condition to the list
+            conditions.append(column_name + '=' + row[column_name])
+        # Join the conditions with comma separator
+        conditions_str = ','.join(conditions)
+        # Append the query to the list
+        queries.append([query_id, conditions_str])
+        # Break the loop after generating the specified number of queries
+        if i == num_queries:
+            break
 
 # Write the queries to a CSV file
-with open('queries.csv', 'w') as file:
-  writer = csv.writer(file)
-  writer.writerows(queries)
+with open('queries.csv', 'w', newline='') as query_file:
+    writer = csv.writer(query_file)
+    writer.writerows(queries)
